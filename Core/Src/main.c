@@ -19,13 +19,13 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
-#include "driver.h"
 #include "tim.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "driver.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -102,9 +102,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-     for (int i = 0 ; i <= 1000; i+=10) {
+     for (int i = -500 ; i <= 500; i+=10) {
       SetMotor(MOTOR_A, i);
-      HAL_Delay(10);
+      HAL_Delay(20);
      }
     /* USER CODE END WHILE */
 

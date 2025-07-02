@@ -5,7 +5,6 @@
 #include "driver.h"
 
 #include <stdlib.h>
-#include <stm32f4xx_hal_tim.h>
 #include <tim.h>
 
 void SetMotor(int motor, int speed) {
