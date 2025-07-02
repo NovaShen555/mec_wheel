@@ -36,8 +36,10 @@ message("Build type: " ${CMAKE_BUILD_TYPE})
 
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME}
-        Core/Src/driver.cpp
-        Core/Src/driver.h)
+        Core/Src/driver.c
+        Core/Inc/driver.h
+        Core/Inc/control.h
+        Core/Src/control.c)
 
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)

@@ -53,6 +53,16 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
+  extern volatile int32_t encoder_count_prev_E2;
+
+  typedef struct speed_data{
+    float speed;
+    float distance;//
+    int32_t encoder_count_prev;
+    int32_t current_count;
+    float delta_pulses;
+    float delta_distance;
+  } Speed_Data;
 
 /* USER CODE END EFP */
 
