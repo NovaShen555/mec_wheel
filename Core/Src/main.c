@@ -46,7 +46,7 @@
 
 /* USER CODE BEGIN PV */
 const float ENCODER_RESOLUTION = 13.0f * 4.0f*48.f;
-const float METERS_PER_PULSE = 1.0f;//不确定轮子直径，先不计算。
+const float METERS_PER_PULSE = (wheel * 3.1415926535f) / ENCODER_RESOLUTION;;//单位cm
 Speed_Data Speed_Data_1,Speed_Data_2,Speed_Data_3,Speed_Data_4;
 /* USER CODE END PV */
 
@@ -93,6 +93,7 @@ int main(void)
   MX_TIM3_Init();
   MX_TIM5_Init();
   MX_TIM1_Init();
+  MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);

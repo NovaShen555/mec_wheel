@@ -63,7 +63,7 @@ void Error_Handler(void);
     float delta_pulses;
     float delta_distance;
   } Speed_Data;
-
+#define wheel 6.8f
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
