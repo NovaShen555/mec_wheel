@@ -25,6 +25,8 @@
 /* USER CODE BEGIN Includes */
 
 #include "driver.h"
+#include "control.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -45,7 +47,9 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+const float ENCODER_RESOLUTION = 13.0f * 4.0f*48.f;
+const float METERS_PER_PULSE = (wheel * 3.1415926535f) / ENCODER_RESOLUTION;;//单位cm
+Speed_Data Speed_Data_1,Speed_Data_2,Speed_Data_3,Speed_Data_4;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -90,6 +94,8 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM3_Init();
   MX_TIM5_Init();
+  MX_TIM1_Init();
+  MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
@@ -159,6 +165,29 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+
+
+
+
+
+
+
+    Speed_Data_2.current_count = TIM1->CNT;
+    Speed_Data_2.delta_pulses = (Speed_Data_2.current_count - Speed_Data_2.encoder_count_prev);
+    Speed_Data_2.encoder_count_prev = Speed_Data_2.current_count;
+    //防止计数器超�?65535
+    if(Speed_Data_2.delta_pulses>60000)Speed_Data_2.delta_pulses-=65535;
+    if(Speed_Data_2.delta_pulses<-60000)Speed_Data_2.delta_pulses+=65535;
+    //计算距离
+    Speed_Data_2.delta_distance =  Speed_Data_2.delta_pulses* METERS_PER_PULSE;
+    float dt =0.002;//
+    //计算车鿿
+    Speed_Data_2.speed = Speed_Data_2.delta_distance / dt;
+    Speed_Data_2.distance += Speed_Data_2.delta_distance ;
+
+  }
 
 /* USER CODE END 4 */
 

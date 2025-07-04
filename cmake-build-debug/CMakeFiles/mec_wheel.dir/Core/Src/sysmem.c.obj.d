@@ -1,0 +1,20 @@
+CMakeFiles/mec_wheel.dir/Core/Src/sysmem.c.obj: \
+ C:\Users\link\Documents\GitHub\mec_wheel\Core\Src\sysmem.c \
+ d:\devault\environment\armgcc\arm-none-eabi\include\errno.h \
+ d:\devault\environment\armgcc\arm-none-eabi\include\sys\errno.h \
+ d:\devault\environment\armgcc\arm-none-eabi\include\sys\reent.h \
+ d:\devault\environment\armgcc\arm-none-eabi\include\_ansi.h \
+ d:\devault\environment\armgcc\arm-none-eabi\include\newlib.h \
+ d:\devault\environment\armgcc\arm-none-eabi\include\_newlib_version.h \
+ d:\devault\environment\armgcc\arm-none-eabi\include\sys\config.h \
+ d:\devault\environment\armgcc\arm-none-eabi\include\machine\ieeefp.h \
+ d:\devault\environment\armgcc\arm-none-eabi\include\sys\features.h \
+ d:\devault\environment\armgcc\lib\gcc\arm-none-eabi\10.3.1\include\stddef.h \
+ d:\devault\environment\armgcc\arm-none-eabi\include\sys\_types.h \
+ d:\devault\environment\armgcc\arm-none-eabi\include\machine\_types.h \
+ d:\devault\environment\armgcc\arm-none-eabi\include\machine\_default_types.h \
+ d:\devault\environment\armgcc\arm-none-eabi\include\sys\lock.h \
+ d:\devault\environment\armgcc\lib\gcc\arm-none-eabi\10.3.1\include\stdint.h \
+ d:\devault\environment\armgcc\arm-none-eabi\include\stdint.h \
+ d:\devault\environment\armgcc\arm-none-eabi\include\sys\_intsup.h \
+ d:\devault\environment\armgcc\arm-none-eabi\include\sys\_stdint.h

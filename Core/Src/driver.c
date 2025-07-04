@@ -2,22 +2,24 @@
 // Created by 10415 on 25-7-2.
 //
 
-#include "driver.h"
+#include "../Inc/driver.h"
 
 #include <stdlib.h>
+
+
 #include <tim.h>
 
 void SetMotor(int motor, int speed) {
     SetPolarity(motor, speed);
     speed = abs(speed);
     if (motor == 1) {
-        __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, speed);
-    } else if (motor == 2) {
-        __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, speed);
-    } else if (motor == 3) {
         __HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_1, speed);
-    } else if (motor == 4) {
+    } else if (motor == 2) {
         __HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_2, speed);
+    } else if (motor == 3) {
+        __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, speed);
+    } else if (motor == 4) {
+        __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, speed);
     }
 }
 
