@@ -23,8 +23,10 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+
 #include "driver.h"
 #include "control.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -105,9 +107,10 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
-      SetMotor(MOTOR_A, 200);
-
+     for (int i = -500 ; i <= 500; i+=10) {
+      SetMotor(MOTOR_A, i);
+      HAL_Delay(20);
+     }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

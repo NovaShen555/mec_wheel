@@ -41,6 +41,7 @@ add_executable(${CMAKE_PROJECT_NAME}
         Core/Inc/control.h
         Core/Src/control.c)
 
+
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)
 
